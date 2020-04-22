@@ -26,9 +26,9 @@ class Input extends Component<Props, State> {
     }
     public render() {
         return (
-            <div>
-                <input type="text" value={this.state.todoValue} data-test="component-input" name="todoValue" onChange={this.handleChange} />
-                <AddButton onClick = {this.props.addTodo} value = {this.state.todoValue}/>
+            <div data-test= "component-input">
+                <input type="text" value={this.state.todoValue} name="todoValue" onChange={this.handleChange} />
+                <AddButton onClick = {this.props.addTodo} data-test ="component-addButton" value = {this.state.todoValue}/>
             </div>
         )
     }
