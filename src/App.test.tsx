@@ -11,7 +11,7 @@ const setup = (initialState = {}) =>{
 }
 
 describe("render",()=>{
-  test("renders without fucking dying",()=>{
+  test("renders without breaking",()=>{
     const wrapper = setup();
     const component = findByTestAttr(wrapper, "component-app");
     expect(component.length).toBe(1);
