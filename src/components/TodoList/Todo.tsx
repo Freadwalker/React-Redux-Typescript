@@ -1,7 +1,7 @@
-import React, { Component} from 'react';
-import {TodoListItem} from './todoListItem';
+import React, { Component } from 'react';
+import { TodoListItem } from './todoListItem';
 import { TodoProp } from '../../models/Todo';
-import { addTodo, removeTodo} from '../../redux/todo/actions';
+import { addTodo, removeTodo } from '../../redux/todo/actions';
 
 import { connect } from 'react-redux';
 import { AppState } from '../../redux/reducers/index';
@@ -16,15 +16,15 @@ interface DispatchProps {
     removeTodo: Function
 };
 
-type Props = StateProps & DispatchProps ;
+type Props = StateProps & DispatchProps;
 
 class Todo extends Component<Props> {
-    constructor(props: Props){
+    constructor(props: Props) {
         super(props);
         this.getList = this.getList.bind(this);
-    } 
+    }
 
-    private getList():Array<TodoProp> {
+    private getList(): Array<TodoProp> {
         let todos = this.props.todos;
         let todoContainer: Array<TodoProp> = [];
         todos.forEach(todo => {
@@ -35,11 +35,12 @@ class Todo extends Component<Props> {
 
     public render() {
         return (
-            <div className = "todo-wrapper" onClick={()=>{this.props.addTodo("Crack")}}>
-                {this.props.todos.map(todo=>{
-                    return(<TodoListItem todo = {todo} />);
+            <div className="todo-wrapper">
+                <button onClick={() => { console.log(" I have spoken"); this.props.addTodo("You clicked something") }}>Add</button>
+                {this.props.todos.map(todo => {
+                    return (<TodoListItem todo={todo} />);
                 })}
-                <ul className = "todo-list">
+                <ul className="todo-list">
                 </ul>
             </div>
         )
@@ -47,15 +48,15 @@ class Todo extends Component<Props> {
 }
 
 const mapStateToProps = (state: AppState): StateProps => {
-    return{
+    return {
         todos: state.todo
     }
 };
 
 const mapDispatchToProps = (dispatch: Function): DispatchProps => {
     return {
-        addTodo: (todo: string) =>  dispatch(addTodo(todo)),
-        removeTodo: (key: string )=> dispatch(removeTodo(key))
+        addTodo: (todo: string) => dispatch(addTodo(todo)),
+        removeTodo: (key: string) => dispatch(removeTodo(key))
     }
 };
 

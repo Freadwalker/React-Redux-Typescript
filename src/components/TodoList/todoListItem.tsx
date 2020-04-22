@@ -10,5 +10,5 @@ interface TodoListItemProps {
 }
 
 export const TodoListItem: React.FC<TodoListItemProps> = ({ todo }) => {
-    return (<li><label><input type="checkbox" checked={todo.complete} onChange={() => { todo.complete = !todo.complete }} /> {todo.text} </label></li>)
+    return (<li><label><input type="checkbox" defaultChecked={todo.complete} onChange={() => { todo.complete = !todo.complete }} /> {todo.text} </label></li>)
 }

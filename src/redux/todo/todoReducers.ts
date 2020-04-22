@@ -3,14 +3,13 @@ import { TodoProp } from '../../models/Todo';
 
 
 const initialState: TodoProp[] =
-    [{ text: "This is not the best todo in the world, this is just a tribute", complete: false }]
+    [{ text: "This is a test Hello", complete: false }]
 
 
 export default function (state = initialState, action: TodoActionTypes): TodoProp[] {
     console.log(action);
     switch (action.type) {
         case ADD_TODO:
-            console.log("ADD TODO is being executed my Lord");
             return [...state, { text: action.text, complete: false }];
         case REMOVE_TODO:
             return state;
