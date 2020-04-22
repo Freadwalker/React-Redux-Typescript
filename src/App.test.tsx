@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow } from 'enzyme';
 import { findByTestAttr, storeFactory } from './test/testUtils';
 import App from './App';
 

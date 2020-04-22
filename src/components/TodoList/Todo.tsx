@@ -32,7 +32,6 @@ class Todo extends Component<Props> {
         })
         return todoContainer;
     }
-
     public render() {
         return (
             <div className="todo-wrapper">
