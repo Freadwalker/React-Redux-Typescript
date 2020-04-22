@@ -36,9 +36,9 @@ class Todo extends Component<Props> {
     public render() {
         return (
             <div className="todo-wrapper">
-                <button onClick={() => { console.log(" I have spoken"); this.props.addTodo("You clicked something") }}>Add</button>
+                <button onClick={() => { this.props.addTodo("You clicked something") }}> Add</button>
                 {this.props.todos.map(todo => {
-                    return (<TodoListItem todo={todo} />);
+                    return (< TodoListItem todo={todo} />);
                 })}
                 <ul className="todo-list">
                 </ul>
