@@ -11,11 +11,14 @@ const setup = (initialState = {}) =>{
 }
 
 describe("render",()=>{
-  let wrapper: ShallowWrapper;
   test("renders without fucking dying",()=>{
     const wrapper = setup();
     const component = findByTestAttr(wrapper, "component-app");
     expect(component.length).toBe(1);
-
+  })
+  test("renders TodoList",()=>{
+    const wrapper = setup();
+    const component = findByTestAttr(wrapper,"component-todo");
+    expect(component.length).toBe(1);
   })
 })
